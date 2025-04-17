@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoxingUA — Турніри та Боксери України</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oswald', sans-serif;
+      background-color: #1c1c1c;
+      color: #f0f0f0;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #FFD700;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #2b2b2b;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background-color: rgba(255, 215, 0, 0.2);
+    }
+    section {
+      padding: 2rem;
+    }
+    .transparent-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2b2b2b;
+      color: #aaa;
+    }
+    .timezones {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BoxingUA</h1>
+    <p>Український бокс: турніри, прогнози, новини</p>
+  </header>
+  <nav>
+    <a href="#fights">Майбутні бої</a>
+    <a href="#predictions">Прогнози</a>
+    <a href="#bets">Ставки</a>
+    <a href="#news">Новини</a>
+    <a href="#comments">Коментарі</a>
+  </nav>
+  <section id="fights">
+    <div class="transparent-box">
+      <h2>🥊 Майбутні бої</h2>
+      <p>Олександр Усик vs Тайсон Ф'юрі — 18 травня 2025, Саудівська Аравія</p>
+    </div>
+  </section>
+  <section id="predictions">
+    <div class="transparent-box">
+      <h2>🔮 Прогнози</h2>
+      <p>Хто переможе: Усик чи Ф'юрі? Додай свій прогноз!</p>
+    </div>
+  </section>
+  <section id="bets">
+    <div class="transparent-box">
+      <h2>💰 Ставки</h2>
+      <p>Фан-ставки на улюбленого боксера. Грай без ризику!</p>
+    </div>
+  </section>
+  <section id="news">
+    <div class="transparent-box">
+      <h2>📰 Новини</h2>
+      <p><a href="#">Хабіба засудили в Європі за…</a></p>
+      <p><a href="#">Ломаченко готується до реваншу</a></p>
+    </div>
+  </section>
+  <section id="comments">
+    <div class="transparent-box">
+      <h2>💬 Коментарі та побажання</h2>
+      <p>Напиши свою думку, додай ідею, підтримай боксера!</p>
+    </div>
+  </section>
+  <footer>
+    <div class="timezones" id="clocks">
+      Київ: <span id="kyiv-time"></span> | Рим: <span id="rome-time"></span> | Берлін: <span id="berlin-time"></span>
+    </div>
+    <p>&copy; 2025 BoxingUA. Усі права захищені.</p>
+  </footer>
+
+  <script>
+    function updateTimes() {
+      const kyiv = new Date().toLocaleTimeString("uk-UA", { timeZone: "Europe/Kyiv" });
+      const rome = new Date().toLocaleTimeString("it-IT", { timeZone: "Europe/Rome" });
+      const berlin = new Date().toLocaleTimeString("de-DE", { timeZone: "Europe/Berlin" });
+
+      document.getElementById("kyiv-time").textContent = kyiv;
+      document.getElementById("rome-time").textContent = rome;
+      document.getElementById("berlin-time").textContent = berlin;
+    }
+    setInterval(updateTimes, 1000);
+    updateTimes();
+  </script>
+</body>
+</html>
